@@ -7,9 +7,7 @@ from model import UNet
 import numpy as np
 from torchnet import meter
 from tensorboardX import SummaryWriter
-from torchnet import meter
 import random
-
 
 torch.manual_seed(1234)
 random.seed(1234)
