@@ -2,7 +2,6 @@
 
 ## Requirement
 
-```bash
 torch==1.8.1+cu111
 matplotlib==3.4.2
 pandas==1.2.4
@@ -12,7 +11,6 @@ numpy==1.19.5
 scikit_learn==1.0
 SimpleITK==2.1.1
 tensorboardX==2.4
-```
 
 ## Usage
 
