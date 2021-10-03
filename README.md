@@ -9,7 +9,7 @@
 base_path = './'
 ```
 in ```bash preprocess.py```
-3. run ```bash python preprocess.py```
+3. run ```python preprocess.py```
 
 
 ### Train model
@@ -20,7 +20,7 @@ basepath = './'
 train_epoches = 500
 val_period = 5
 ```
-2.run ```bach python train.py```
+2.run ```python train.py```
 
 ### Test
 
@@ -30,4 +30,4 @@ model_path = 'model/405.model'
 test_image_path = 'studies/CT-0/study_0200.nii.gz'
 threshold = [0, 3299.032990329903, 47378.47378473785, 86080.86080860808, 214349]
 ```
-2.run ```bach python test.py```
+2.run ```python test.py```
