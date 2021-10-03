@@ -39,12 +39,11 @@ val_period = 5
 You can download our trained weight file here https://drive.google.com/file/d/1GnOtJ4d4CE1vfiG15FYYFgmtr40y-2Dw/view?usp=sharing
 
 ### Segment each CT scans and find optimal threshold
-1. Config
+1. Config ```Analysis.py```
 ```bash
 basepath = './'
 model_path = 'model/405.model'
 ```
-in ```Analysis.py```
 2. run ```python Analysis.py```
 
 
