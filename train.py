@@ -8,10 +8,23 @@ import numpy as np
 from torchnet import meter
 from tensorboardX import SummaryWriter
 import random
+import os
 
 torch.manual_seed(1234)
 random.seed(1234)
 np.random.seed(1234)
+
+basepath = './'
+train_epoches = 500
+val_period = 5
+SummaryWriterPath = basepath + 'log/'
+SaveModelPath = basepath + 'model/'
+slides_path = basepath + 'slides/'
+
+if not os.path.isdir(SummaryWriterPath):
+    os.mkdir(SummaryWriterPath)
+if not os.path.isdir(SaveModelPath):
+    os.mkdir(SaveModelPath)
 
 def cross_entropy2d(input, target, weight=None, size_average=True):
     #NxCxHxW
@@ -56,11 +69,7 @@ def _fast_hist(label_true, label_pred, n_class):
         label_pred[mask], minlength=n_class**2).reshape(n_class, n_class)
     return hist
 
-train_epoches = 500
-val_period = 5
-SummaryWriterPath = 'datahackthon/log/segmentation'
-SaveModelPath = 'datahackthon/model'
-slides_path = './COVID19_1110/slides/'
+
 
 
 model = UNet(1, 2).cuda()

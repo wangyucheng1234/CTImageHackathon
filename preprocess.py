@@ -8,6 +8,7 @@ import random
 
 from sklearn.model_selection import train_test_split
 import pandas as pd
+import pathlib
 
 torch.manual_seed(1234)
 random.seed(1234)
@@ -18,7 +19,13 @@ np.random.seed(1234)
 #train_pd = pd.DataFrame(columns = ('path', 'label'))
 #test_pd = pd.DataFrame(columns = ('path', 'label'))
 
-path = './COVID19_1110/studies/'
+base_path = './'
+path = base_path + 'studies/'
+slides_path = base_path + 'slides/'
+slices_extension = '.npy'
+mask_path = base_path + 'masks/'
+img_path = base_path + 'studies/CT-1/'
+
 
 train_list = []
 test_list = []
@@ -50,8 +57,7 @@ train_list = []
 test_list = []
 train_mask_list = []
 val_mask_list = []
-mask_path = './COVID19_1110/masks/'
-img_path = './COVID19_1110/studies/CT-1/'
+
 
 #for i in os.listdir(mask_path):
 #if 'CT-1' in i:
@@ -59,6 +65,7 @@ img_path = './COVID19_1110/studies/CT-1/'
 #print(subpath)
 datalist = glob.glob(mask_path + '/*.nii.gz', recursive = True)
 num_image = len(datalist)
+print('num', num_image)
 #print(num_image)
 #sample 20%
 train_idx, val_idx = train_test_split(datalist, test_size=0.2)
@@ -82,9 +89,7 @@ test_mask_pd.to_csv(path + 'val_mask.csv')
 
 
 #train_mask_csv_path = '/content/gdrive/MyDrive/datahackthon/COVID19_1110/COVID19_1110/train_slices.csv'
-base_path = './COVID19_1110/'
-slides_path = './COVID19_1110/slides/'
-slices_extension = '.npy'
+
 
 total_useful_slides = 0
 total_useless_slides = 0

@@ -13,15 +13,14 @@ from model import UNet
 import numpy as np
 from torchnet import meter
 from tensorboardX import SummaryWriter
-from torchnet import meter
 import random
 
 
-model_path = './datahackthon/model/405.model'
-test_image_path = ''
+model_path = 'model/405.model'
+test_image_path = 'studies/CT-0/study_0200.nii.gz'
 model = UNet(1, 2).cuda()
 model.load_state_dict(torch.load(model_path))
-path = './COVID19_1110/studies/'
+#path = './COVID19_1110/studies/'
 #predict_mask_path = './COVID19_1110/predict_mask/'
 import matplotlib.pyplot as plt
 model.eval()
@@ -52,7 +51,7 @@ def normalize(volume):
 itkimage = sitk.ReadImage(test_image_path)
 arrayimage = sitk.GetArrayFromImage(itkimage)
 #img_sum = 0
-mask_class = str(pathlib.PurePosixPath(j).parent).split('/')[-1]
+#mask_class = str(pathlib.PurePosixPath(j).parent).split('/')[-1]
 #save_mask_path = predict_mask_path + mask_class + '/' + pathlib.PurePosixPath(j).name.split('.')[0]+'_segmask'+'.nii.gz'
 #print(save_mask_path)
 mask_array = np.zeros(arrayimage.shape)
