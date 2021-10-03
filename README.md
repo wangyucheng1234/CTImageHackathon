@@ -8,7 +8,7 @@
 ```bash
 base_path = './'
 ```
-in ```bash preprocess.py```
+in ```preprocess.py```
 3. run ```python preprocess.py```
 
 
