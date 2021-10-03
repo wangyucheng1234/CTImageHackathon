@@ -18,6 +18,7 @@ import random
 
 model_path = 'model/405.model'
 test_image_path = 'studies/CT-0/study_0200.nii.gz'
+threshold = [0, 3299.032990329903, 47378.47378473785, 86080.86080860808, 214349]
 model = UNet(1, 2).cuda()
 model.load_state_dict(torch.load(model_path))
 #path = './COVID19_1110/studies/'
@@ -60,7 +61,6 @@ out = sitk.GetImageFromArray(arrayimage)
 #print(itkimage)
 #print(out)
 
-threshold = [0, 3299.032990329903, 47378.47378473785, 86080.86080860808, 214349]
 
 sum_pixels = 0
 
