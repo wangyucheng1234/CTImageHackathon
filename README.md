@@ -22,6 +22,7 @@ val_period = 5
 ```
 2.run ```python train.py```
 
+You can download our trained weight file here https://drive.google.com/file/d/1GnOtJ4d4CE1vfiG15FYYFgmtr40y-2Dw/view?usp=sharing
 ### Test
 
 1.Config ```test.py```
