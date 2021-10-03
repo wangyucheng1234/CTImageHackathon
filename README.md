@@ -14,7 +14,7 @@ in ```bash preprocess.py```
 
 ### Train model
 
-1.Config ```bach train.py```
+1.Config ```bash train.py```
 ```bash
 basepath = './'
 train_epoches = 500
@@ -24,7 +24,7 @@ val_period = 5
 
 ### Test
 
-1.Config ```bach test.py```
+1.Config ```bash test.py```
 ```bash
 model_path = 'model/405.model'
 test_image_path = 'studies/CT-0/study_0200.nii.gz'
